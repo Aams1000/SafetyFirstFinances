@@ -1,0 +1,27 @@
+@*
+* Display for expenditure charts.
+*@
+@(pageTitle: String, histogram: models.charts.Histogram)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    @*Plotly.js*@
+    <head>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <title>@pageTitle</title>
+</head>
+<body>
+    <div id="testPageTitle">I am text! @pageTitle</div>
+    <div class="chartTitle">Chart title: @histogram.titleAndAxesLabels.title</div>
+    <div class="chartXLabel">Chart x-label: @histogram.titleAndAxesLabels.x</div>
+    <div class="chartYLabel">Chart y-label: @histogram.titleAndAxesLabels.y</div>
+    <div class="chartData">
+        <a>Chart data: </a>
+            @for(labelAndValue <- histogram.data){
+        <ul class="dataLabelAndValue">@labelAndValue.label: @labelAndValue.value</ul>
+        }
+    </div>
+</body>
+</html>
