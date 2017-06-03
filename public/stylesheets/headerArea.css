@@ -1,4 +1,35 @@
+/* Styling for the header area (part of the page with dropdowns for selecting expenditure parameters)
+    
+    Created by: Andrew
+    Created on: 5.28.17
+*/
+
 #headerDisplayWindow {
   margin-left: 3%;
   margin-right: 3%;
+}
+
+.dataEntryArea {
+  display: inline-block;
+  min-width: 140px;
+  margin-right: 8px;
+  vertical-align: top;
+}
+
+.dataEntryLabel {
+  display: table;
+}
+
+#viewSpendingButton {
+  margin-top: 15px;
+  background-color: #6c6ca5;
+  border-color: #6c6ca5;
+  color: #e8e8f3;
+}
+
+/* Chosen overrides */
+
+/* Overriding the default 29px height Chosen sets for the search bar */
+.chosen-choices {
+  min-height: 32px;
 }

@@ -1,3 +1,10 @@
+/* JavaScript for histogram-specific operations (Plotly calls these "bar" charts). Histogram
+    object is Histogram::toJson.
+    
+    Created by: Andrew
+    Created on: 5.28.17
+*/
+
 const histogramRenderer = {
 
   renderHistogram: function(histogram, div) {

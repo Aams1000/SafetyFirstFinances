@@ -1,0 +1,72 @@
+@*
+* Header area (dropdowns for graphs to select). That multiselect with Chosen was a major pain in the ass.
+*
+* Created by Andrew 5.29.17
+*@
+
+@* JavaScript for fixing Chosen's multiselect dropdown *@
+<script src="@routes.Assets.versioned("javascripts/fixChosenMenus.js")" type="text/javascript"></script>
+
+<div id="headerArea">
+    <div id="headerDisplayWindow">
+        <h1 id="pageHeader">Welcome to your expenditure tool</h1>
+
+        <div id="topDataSelectArea">
+            @* Month select area *@
+            <div id="monthSelectArea" class="dataEntryArea">
+                <div class="form-group">
+                    @* Add classes "label label-primary" for blue label display *@
+                    <label class="dataEntryLabel" for="monthSelect">Month</label>
+                    <select class="form-control" id="monthSelect">
+                        <option>January</option>
+                        <option>February</option>
+                        <option>...</option>
+                    </select>
+                </div>
+            </div>
+            @* Year select area *@
+            <div id="yearSelectArea" class="dataEntryArea">
+                <div class="form-group">
+                    @* Add classes "label label-primary" for blue label display *@
+                    <label class="dataEntryLabel" for="yearSelect">Year</label>
+                    <select class="form-control" id="yearSelect">
+                        <option>2016</option>
+                        <option>2017</option>
+                    </select>
+                </div>
+            </div>
+            @* Category select area *@
+            <div id="categorySelectArea" class="dataEntryArea">
+                <div class="form-group">
+                    @* Commented out to avoid bizarre spacing issues (extends far to the right) *@
+                    <!-- <div class="col-lg-
+                    @* Add classes "label label-primary" for blue label display *@ 3"> -->
+                    <label class="dataEntryLabel" for="categorySelect">Categories</label>
+                    <select id="categorySelect" data-placeholder="Choose a category" class="chosen-select form-control" multiple tabindex="4">
+                        <option value="All">All</option>
+                        <option value="United States">United States</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Other1">Other 1</option>
+                        <option value="Other2">Other 2</option>
+                    </select>
+                </div>
+                <!-- </div> -->
+            </div>
+
+            <button id="viewSpendingButton" type="button" class="btn btn-lg btn-info">View spending</button>
+        </div>
+    </div>
+</div>
+</div>
+@* Activate Chosen select boxes *@
+<script type"text/javascript">$(".chosen-select").chosen();</script>
+@* Script to fix Chosen menus *@
+<script type="text/javascript">$(document).ready(fixChosenMenus.fixMultiSelectStyling());</script>
+
+
+
+
+
+<!--END HEADER AREA-->
+@* END HEADER AREA *@
+

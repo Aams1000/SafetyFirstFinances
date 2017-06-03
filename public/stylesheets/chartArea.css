@@ -1,0 +1,10 @@
+/* Styling for the space containing charts.
+  
+  Created by: Andrew
+  Created on: 5.28.17
+*/
+
+#chartArea {
+  margin-right: 3%;
+  margin-left: 3%;
+}
