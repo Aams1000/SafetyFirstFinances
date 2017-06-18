@@ -5,9 +5,9 @@
     Created on: 5.28.17
 */
 
-const histogramRenderer = {
+define(['plotly', 'jquery'], function(Plotly, $){
 
-  renderHistogram: function(histogram, div) {
+  function renderHistogram(histogram, div) {
     const labels = [];
     const dataValues = [];
     for (var i = 0; i < histogram.labelsAndDataValues.length; i++){
@@ -31,5 +31,9 @@ const histogramRenderer = {
     }];
     Plotly.plot(div, data, layout);
   }
-};
+
+  return {renderHistogram: renderHistogram};
+});
+
+  
 

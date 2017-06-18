@@ -13,7 +13,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <head>
     @globalDependencies()
 
     @* Local dependencies *@
@@ -26,10 +25,8 @@
       <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/headerArea.css")">
       <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/chartArea.css")">
 
-    @* Local JavaScript *@
-    <script src="@routes.Assets.versioned("javascripts/histogramRenderer.js")" type="text/javascript"></script>
+    @* Local JavaScript handled by RequireJS in headerArea.scala.html*@
 
-  </head>
   <title>@pageTitle</title>
 </head>
 <body>
@@ -39,12 +36,11 @@
 
   @*First histogram holder*@
   <div id="chartArea">
+    <div id="initialChartData" data-value="@histogram.toJson()"></div>
     <div id="defaultHistogram"></div>
   </div>
 
-  @* Script to load histograms *@
-  <script type="text/javascript">$(document).ready(histogramRenderer.renderHistogram(JSON.parse("@histogram.toJson()".replace(/&quot;/g,'"')), document.getElementById('defaultHistogram')));</script>
-     @* <script type="text/javascript">$(document).ready(histogramRenderer.renderHistogram(JSON.parse("{ \"test\":\"test\"}")));</script>*@
+  @* Script to load histograms triggered by RequireJS *@
 
 </body>
 </html>

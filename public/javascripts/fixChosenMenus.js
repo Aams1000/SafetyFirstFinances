@@ -5,9 +5,9 @@
     Created on: 5.28.17
 */
 
-const fixChosenMenus = {
+define(['jquery'], function($){
 
-  fixMultiSelectStyling: function() {
+  function fixMultiSelectStyling() {
     const selectAreas = document.getElementsByClassName("chosen-container chosen-container-multi");
     if (selectAreas) {
       for (var i = 0; i < selectAreas.length; i++) {
@@ -15,5 +15,14 @@ const fixChosenMenus = {
       }
     }
   }
-};
 
+  function fixMenusOnInit() {
+      console.log("Fixing multiselect styling...");
+      fixMultiSelectStyling();
+      console.log("Finished fixing multiselect styling");
+  }
+
+  //fix Chosen stylings on pageload
+  $(document).ready(fixMenusOnInit());
+
+});

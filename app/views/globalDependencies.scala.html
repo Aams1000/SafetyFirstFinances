@@ -1,12 +1,11 @@
 @*
-* Inject jQuery, Bootstrap, Plotly, etc.
+* Inject non-RequireJS modularized global dependencies.
 *
 * Created by Andrew 5.29.17
 *@
 
-
-@*Plotly.js*@
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+@* Bootstrap seems to need this to be globally available, and Bootstrap requires jQuery. All dependencies not listed here
+    are handled in modules with RequireJS *@
 @*jQuery*@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 @* Bootstrap - Latest compiled and minified CSS *@

@@ -4,8 +4,8 @@
 * Created by Andrew 5.29.17
 *@
 
-@* JavaScript for fixing Chosen's multiselect dropdown *@
-<script src="@routes.Assets.versioned("javascripts/fixChosenMenus.js")" type="text/javascript"></script>
+@* Initialize RequireJS AMD modules *@
+<script data-main="@routes.Assets.versioned("javascripts/requirejs/initRequire.js")" src="@routes.Assets.versioned("javascripts/requirejs/require-2.3.3.js")"></script>
 
 <div id="headerArea">
     <div id="headerDisplayWindow">
@@ -38,9 +38,7 @@
             @* Category select area *@
             <div id="categorySelectArea" class="dataEntryArea">
                 <div class="form-group">
-                    @* Commented out to avoid bizarre spacing issues (extends far to the right) *@
-                    <!-- <div class="col-lg-
-                    @* Add classes "label label-primary" for blue label display *@ 3"> -->
+                    @* Add classes "label label-primary" for blue label display *@
                     <label class="dataEntryLabel" for="categorySelect">Categories</label>
                     <select id="categorySelect" data-placeholder="Choose a category" class="chosen-select form-control" multiple tabindex="4">
                         <option value="All">All</option>
@@ -50,21 +48,15 @@
                         <option value="Other2">Other 2</option>
                     </select>
                 </div>
-                <!-- </div> -->
             </div>
 
             <button id="viewSpendingButton" type="button" class="btn btn-lg btn-info">View spending</button>
         </div>
     </div>
 </div>
-</div>
+
 @* Activate Chosen select boxes *@
-<script type"text/javascript">$(".chosen-select").chosen();</script>
-@* Script to fix Chosen menus *@
-<script type="text/javascript">$(document).ready(fixChosenMenus.fixMultiSelectStyling());</script>
-
-
-
+<script type="text/javascript">$(".chosen-select").chosen();</script>
 
 
 <!--END HEADER AREA-->
